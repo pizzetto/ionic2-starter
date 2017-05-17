@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Dashboard</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="login">
+    <div padding>
+        <ion-img width="80" height="80" circle [src]="getUser().profile_picture"></ion-img>
+        <div class="pull-right">
+            <h2>{{auth.user.email}}</h2>
+            <p>{{auth.user.first_name}} {{auth.user.last_name}}</p>
+        </div>
+    </div>
+    <div padding>
+        <ion-segment [(ngModel)]="authType">
+            <ion-segment-button value="profile">
+                Profile
+            </ion-segment-button>
+            <ion-segment-button value="posts">
+                Posts
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+    <div [ngSwitch]="authType">
+        <form *ngSwitchCase="'profile'" [formGroup]="profileForm">
+            <ion-item>
+                <ion-label floating>First name</ion-label>
+                <ion-input type="text" formControlName="first_name" [(ngModel)]="auth.user.first_name" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Last name</ion-label>
+                <ion-input type="text" formControlName="last_name" [(ngModel)]="auth.user.last_name" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Email</ion-label>
+                <ion-input type="text" formControlName="email" [(ngModel)]="auth.user.email" required></ion-input>
+            </ion-item>
+        </form>
+    </div>
+
+</ion-content>

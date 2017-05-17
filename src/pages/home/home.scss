@@ -1,0 +1,15 @@
+page-home {
+    h1, h2, p {
+        color: map-get($colors, light);
+    }
+    ion-slide {
+        flex-direction: column;
+        justify-content: flex-start !important;
+        background-repeat: no-repeat;
+        background-position-y: center;
+        background-size: cover;
+        background-blend-mode: luminosity;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding-top: 10%;
+    }
+}

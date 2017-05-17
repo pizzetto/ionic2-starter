@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Login</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="login" *ngIf="!auth.authenticated()">
+    <div padding>
+        <ion-segment [(ngModel)]="authType">
+            <ion-segment-button value="login">
+                Login
+            </ion-segment-button>
+            <ion-segment-button value="signup">
+                Signup
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
+    <div [ngSwitch]="authType">
+        <form *ngSwitchCase="'login'" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+            <ion-item>
+                <ion-label>Username</ion-label>
+                <ion-input type="text" formControlName="username" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Password</ion-label>
+                <ion-input type="password" formControlName="password" required></ion-input>
+            </ion-item>
+
+            <div padding>
+                <button ion-button block type="submit">Login</button>
+            </div>
+
+        </form>
+        <form *ngSwitchCase="'signup'" #signupCreds="ngForm" (ngSubmit)="signup(signupCreds.value)">
+            <ion-item>
+                <ion-label>Username</ion-label>
+                <ion-input type="text" ngControl="username"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Password</ion-label>
+                <ion-input type="password" ngControl="password"></ion-input>
+            </ion-item>
+
+            <div padding>
+                <button block type="submit">Signup</button>
+            </div>
+
+        </form>
+    </div>
+
+    <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+
+    <div padding>
+        <p *ngIf="error" class="error">{{ error._body }}</p>
+    </div>
+
+</ion-content>
