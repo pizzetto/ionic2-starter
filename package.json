@@ -1,9 +1,9 @@
 {
-  "name": "postazamba-client",
+  "name": "ionic2-starter",
   "version": "0.0.1",
-  "author": "Shakazamba Srls",
-  "homepage": "http://postazamba.com/",
-  "private": true,
+  "author": "Gabriele Murari",
+  "homepage": "",
+  "private": false,
   "scripts": {
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
@@ -56,12 +56,12 @@
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [],
-  "description": "postazambaClient-ionic: An Ionic project",
+  "description": "Ionic 2 Starter Project with navigation menu and login",
   "cordova": {
     "plugins": {
       "cordova-plugin-facebook4": {
-        "APP_ID": "280059672456840",
-        "APP_NAME": "Postazamba"
+        "APP_ID": "XXXXXXXXXXXXXX",
+        "APP_NAME": "ionic2"
       },
       "cordova-plugin-console": {},
       "cordova-plugin-device": {},
