@@ -7,8 +7,8 @@ import { User } from '../models/user';
 
 @Injectable()
 export class AuthService {
-    LOGIN_URL: string = "http://postazamba.shakazamba.com/api/v1/auth/login";
-    SIGNUP_URL: string = "http://postazamba.shakazamba.com/api/v1/auth/login";
+    LOGIN_URL: string = "http://www.example.com/api/v1/auth/login";
+    SIGNUP_URL: string = "http://www.example.com/api/v1/auth/login";
     contentHeader: Headers = new Headers({ "Content-Type": "application/json" });
     jwtHelper: JwtHelper = new JwtHelper();
     user: User;
